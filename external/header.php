@@ -4,13 +4,38 @@
 
 class XH
 {
-    static function start() 
+    static $extensions = [
+        'tideways',
+        'xhprof' ,
+        'tideways_xhprof'
+    ];
+
+    static $detectedExtension = null;
+
+    static function detectExtension()
     {
-        if (!extension_loaded('tideways_xhprof')) {
-            error_log('xhgui - either extension tideways must be loaded');
+        foreach (self::$mapping as $extension) {
+            if (extension_loaded($extension)) {
+                self::$detectedExtension = $extension;
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    static function start()
+    {
+        if (!self::detectExtension()) {
+            error_log('xhgui - profiling must be loaded');
             return;
         }
-        tideways_xhprof_enable(TIDEWAYS_XHPROF_FLAGS_CPU | TIDEWAYS_XHPROF_FLAGS_MEMORY);
+        call_user_func(
+            self::$detectedExtension . '_enable',
+            constant (strtoupper(self::$detectedExtension) . '_FLAGS_CPU')
+            | constant (strtoupper(self::$detectedExtension) . '_FLAGS_MEMORY')
+
+        );
         register_shutdown_function(
             function () {
                 \XH::stop();
@@ -24,7 +49,7 @@ class XH
         flush();
 
         $data = [
-            'profile' => tideways_xhprof_disable(),
+            'profile' => call_user_func(self::$detectedExtension . '_disable'),
             'meta' => [
                 'server' => $_SERVER,
                 'get' => $_GET,
@@ -34,7 +59,7 @@ class XH
 
         try {
             self::send('http://xhgui/api.php', $data);
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             error_log('xhgui - ' . $e->getMessage());
         }
     }

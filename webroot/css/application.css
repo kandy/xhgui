@@ -42,11 +42,18 @@ body {
 
 <div class="slick-cell l0 r0"><b class="cell-p-vendor">Magento</b><b class="cell-p-path">Code::Reader</b><b class="cell-p-class">ClassReader</b><b class="cell-p-fname">getConstructor</b></div>
 */
-.cell-call { text-align: right}
 .cell-call>* {
     display: inline-block;
     min-width: 25%;
+}
 
+.cell-call-right>* {
+    display: inline-block;
+    min-width: 25%;
+}
+
+.cell-call-right {
+    text-align: right
 }
 
 
@@ -61,15 +68,11 @@ body {
     min-width: inherit;
 }
 
-.cell-p-path {
-    display: none;
-}
-.slick-row:hover  .cell-p-path {
+.slick-row  .cell-p-path {
     display: inline-block;
     font-size: 80%;
     color: #888;
     text-align: left;
-    float: left;
     font-weight: normal;
 
 }

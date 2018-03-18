@@ -4,8 +4,138 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "3dd4d9902a436c08fe6e2722c99791f7",
+    "content-hash": "340982edcf52c5b764ce3a093389379a",
     "packages": [
+        {
+            "name": "alcaeus/mongo-php-adapter",
+            "version": "1.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/alcaeus/mongo-php-adapter.git",
+                "reference": "45ba115e448c735cb0dbed5ebe857971aa4d43f5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/alcaeus/mongo-php-adapter/zipball/45ba115e448c735cb0dbed5ebe857971aa4d43f5",
+                "reference": "45ba115e448c735cb0dbed5ebe857971aa4d43f5",
+                "shasum": ""
+            },
+            "require": {
+                "ext-hash": "*",
+                "ext-mongodb": "^1.2.0",
+                "mongodb/mongodb": "^1.0.1",
+                "php": "^5.6 || ^7.0"
+            },
+            "provide": {
+                "ext-mongo": "1.6.14"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7 || ^6.0",
+                "squizlabs/php_codesniffer": "^3.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Mongo": "lib/Mongo"
+                },
+                "psr-4": {
+                    "Alcaeus\\MongoDbAdapter\\": "lib/Alcaeus/MongoDbAdapter"
+                },
+                "files": [
+                    "lib/Mongo/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "alcaeus",
+                    "email": "alcaeus@alcaeus.org"
+                },
+                {
+                    "name": "Olivier Lechevalier",
+                    "email": "olivier.lechevalier@gmail.com"
+                }
+            ],
+            "description": "Adapter to provide ext-mongo interface on top of mongo-php-libary",
+            "keywords": [
+                "database",
+                "mongodb"
+            ],
+            "time": "2018-01-24T18:55:13+00:00"
+        },
+        {
+            "name": "mongodb/mongodb",
+            "version": "1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mongodb/mongo-php-library.git",
+                "reference": "07ffd2438658342b776803323cfaa7c156a6099a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mongodb/mongo-php-library/zipball/07ffd2438658342b776803323cfaa7c156a6099a",
+                "reference": "07ffd2438658342b776803323cfaa7c156a6099a",
+                "shasum": ""
+            },
+            "require": {
+                "ext-hash": "*",
+                "ext-json": "*",
+                "ext-mongodb": "^1.4.0",
+                "php": ">=5.5"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8.36"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "MongoDB\\": "src/"
+                },
+                "files": [
+                    "src/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Jeremy Mikola",
+                    "email": "jmikola@gmail.com"
+                },
+                {
+                    "name": "Derick Rethans",
+                    "email": "github@derickrethans.nl"
+                },
+                {
+                    "name": "Katherine Walker",
+                    "email": "katherine.walker@mongodb.com"
+                }
+            ],
+            "description": "MongoDB driver library",
+            "homepage": "https://jira.mongodb.org/browse/PHPLIB",
+            "keywords": [
+                "database",
+                "driver",
+                "mongodb",
+                "persistence"
+            ],
+            "time": "2018-02-08T16:30:23+00:00"
+        },
         {
             "name": "pimple/pimple",
             "version": "v1.1.1",
@@ -154,20 +284,20 @@
         },
         {
             "name": "twig/twig",
-            "version": "v1.33.0",
+            "version": "v1.35.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "05cf49921b13f6f01d3cfdf9018cfa7a8086fd5a"
+                "reference": "daa657073e55b0a78cce8fdd22682fddecc6385f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/05cf49921b13f6f01d3cfdf9018cfa7a8086fd5a",
-                "reference": "05cf49921b13f6f01d3cfdf9018cfa7a8086fd5a",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/daa657073e55b0a78cce8fdd22682fddecc6385f",
+                "reference": "daa657073e55b0a78cce8fdd22682fddecc6385f",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.2.7"
+                "php": ">=5.3.3"
             },
             "require-dev": {
                 "psr/container": "^1.0",
@@ -177,12 +307,15 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.33-dev"
+                    "dev-master": "1.35-dev"
                 }
             },
             "autoload": {
                 "psr-0": {
                     "Twig_": "lib/"
+                },
+                "psr-4": {
+                    "Twig\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -212,131 +345,10 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2017-03-22T15:40:09+00:00"
+            "time": "2017-09-27T18:06:46+00:00"
         }
     ],
     "packages-dev": [
-        {
-            "name": "alcaeus/mongo-php-adapter",
-            "version": "1.0.10",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/alcaeus/mongo-php-adapter.git",
-                "reference": "a85069eb0d1b8c3dc7b24572e91f158f8a3c9e77"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/alcaeus/mongo-php-adapter/zipball/a85069eb0d1b8c3dc7b24572e91f158f8a3c9e77",
-                "reference": "a85069eb0d1b8c3dc7b24572e91f158f8a3c9e77",
-                "shasum": ""
-            },
-            "require": {
-                "ext-hash": "*",
-                "mongodb/mongodb": "^1.0.1",
-                "php": "^5.5 || ^7.0"
-            },
-            "provide": {
-                "ext-mongo": "1.6.14"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.8 || ^5.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Mongo": "lib/Mongo"
-                },
-                "psr-4": {
-                    "Alcaeus\\MongoDbAdapter\\": "lib/Alcaeus/MongoDbAdapter"
-                },
-                "files": [
-                    "lib/Mongo/functions.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "alcaeus",
-                    "email": "alcaeus@alcaeus.org"
-                },
-                {
-                    "name": "Olivier Lechevalier",
-                    "email": "olivier.lechevalier@gmail.com"
-                }
-            ],
-            "description": "Adapter to provide ext-mongo interface on top of mongo-php-libary",
-            "keywords": [
-                "database",
-                "mongodb"
-            ],
-            "time": "2017-03-29T18:29:29+00:00"
-        },
-        {
-            "name": "mongodb/mongodb",
-            "version": "1.1.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mongodb/mongo-php-library.git",
-                "reference": "a307dd60e71e1291c60927ea4f3a1905146063f5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mongodb/mongo-php-library/zipball/a307dd60e71e1291c60927ea4f3a1905146063f5",
-                "reference": "a307dd60e71e1291c60927ea4f3a1905146063f5",
-                "shasum": ""
-            },
-            "require": {
-                "ext-mongodb": "^1.2.0",
-                "php": ">=5.4"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.8"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "MongoDB\\": "src/"
-                },
-                "files": [
-                    "src/functions.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Jeremy Mikola",
-                    "email": "jmikola@gmail.com"
-                },
-                {
-                    "name": "Hannes Magnusson",
-                    "email": "bjori@mongodb.com"
-                },
-                {
-                    "name": "Derick Rethans",
-                    "email": "github@derickrethans.nl"
-                }
-            ],
-            "description": "MongoDB driver library",
-            "homepage": "https://jira.mongodb.org/browse/PHPLIB",
-            "keywords": [
-                "database",
-                "driver",
-                "mongodb",
-                "persistence"
-            ],
-            "time": "2017-02-16T18:40:32+00:00"
-        },
         {
             "name": "phpunit/php-code-coverage",
             "version": "1.2.18",
@@ -400,16 +412,16 @@
         },
         {
             "name": "phpunit/php-file-iterator",
-            "version": "1.4.2",
+            "version": "1.4.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-file-iterator.git",
-                "reference": "3cc8f69b3028d0f96a9078e6295d86e9bf019be5"
+                "reference": "730b01bc3e867237eaac355e06a36b85dd93a8b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-file-iterator/zipball/3cc8f69b3028d0f96a9078e6295d86e9bf019be5",
-                "reference": "3cc8f69b3028d0f96a9078e6295d86e9bf019be5",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-file-iterator/zipball/730b01bc3e867237eaac355e06a36b85dd93a8b4",
+                "reference": "730b01bc3e867237eaac355e06a36b85dd93a8b4",
                 "shasum": ""
             },
             "require": {
@@ -443,7 +455,7 @@
                 "filesystem",
                 "iterator"
             ],
-            "time": "2016-10-03T07:40:28+00:00"
+            "time": "2017-11-27T13:52:08+00:00"
         },
         {
             "name": "phpunit/php-text-template",
@@ -709,16 +721,16 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v2.8.19",
+            "version": "v2.8.34",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "286d84891690b0e2515874717e49360d1c98a703"
+                "reference": "be720fcfae4614df204190d57795351059946a77"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/286d84891690b0e2515874717e49360d1c98a703",
-                "reference": "286d84891690b0e2515874717e49360d1c98a703",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/be720fcfae4614df204190d57795351059946a77",
+                "reference": "be720fcfae4614df204190d57795351059946a77",
                 "shasum": ""
             },
             "require": {
@@ -754,7 +766,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2017-03-20T09:41:44+00:00"
+            "time": "2018-01-03T07:36:31+00:00"
         }
     ],
     "aliases": [],

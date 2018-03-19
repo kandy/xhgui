@@ -17,24 +17,14 @@
  */
 
 if (php_sapi_name() === 'cli-server') {
-    if (preg_match('/^\/(index|api)\.php(\/)?/', $_SERVER["REQUEST_URI"])) {
-        return false;    // serve the requested resource as-is.
-    }
+    $path = $_SERVER["SCRIPT_FILENAME"];
 
-    $path = pathinfo($_SERVER["SCRIPT_FILENAME"]);
-
-    if ($path["basename"] == 'favicon.ico') {
-        return false;
-    }
-
-
-    switch ($path["basename"]) {
+    switch (pathinfo($path, PATHINFO_BASENAME)) {
         case 'index.php':
         case 'api.php':
-            include $path["basename"];
+            include $path;
             break;
         default:
-
+            return false;
     }
-    header('HTTP/1.0 404 Not Found');
 }

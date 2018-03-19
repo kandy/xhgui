@@ -1,7 +1,6 @@
 FROM php:7.0
 MAINTAINER KAndy <to.kandy@gmail.com>
 
-VOLUME /xhgui
 
 RUN apt-get update && apt-get install -y \
     zlib1g-dev \
@@ -18,4 +17,4 @@ WORKDIR /xhgui
 
 EXPOSE 80
 
-CMD ["php", "-S", "0.0.0.0:80", "-t", "./webroot", "./router.php"]
+CMD ["php", "-d", "-S", "0.0.0.0:80", "-t", "./webroot", "./router.php"]

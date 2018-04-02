@@ -6,7 +6,7 @@ class XH
 {
     static $extensions = [
         'tideways',
-        'xhprof' ,
+        'xhprof',
         'tideways_xhprof'
     ];
 
@@ -14,7 +14,7 @@ class XH
 
     static function detectExtension()
     {
-        foreach (self::$mapping as $extension) {
+        foreach (self::$extensions as $extension) {
             if (extension_loaded($extension)) {
                 self::$detectedExtension = $extension;
                 return true;

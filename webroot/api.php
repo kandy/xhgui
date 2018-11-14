@@ -26,7 +26,7 @@ try {
             'url' => $uri,
             'SERVER' => $_SERVER,
             'get' => $_POST['meta']['get'] ?? [],
-            'env' => $_POST['meta']['env'],
+            'env' => $_POST['meta']['env'] ?? [],
             'simple_url' => preg_replace('/\d+$/', '', $uri),
             'request_ts' => new MongoDB\BSON\UTCDateTime(DateTime::createFromFormat('U', $time)),
             'request_ts_micro' => new MongoDB\BSON\UTCDateTime(preg_replace('/\D/', '',  $milliseconds)),
